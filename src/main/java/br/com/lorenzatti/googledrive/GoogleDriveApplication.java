@@ -28,9 +28,9 @@ public class GoogleDriveApplication {
 
     private static String APPLICATION_NAME = "Upload Google Drive";
 
-    private static String CREDENTIALS = "D:/jfc/portal/client_credentials.json";
-    private static String DIRECTORY_ID = "11tNrhIRSyQFc41KiY04Q-9nl4-nheyDo";
-    private static String TOKEN = "0f03dc9e1bbf0c144ec630376958ebbc42c00100";
+    private static String CREDENTIALS = "client_credentials.json"; // copy credentials file to resources folder
+    private static String DIRECTORY_ID = ""; // put id of shared folder
+    private static String TOKEN = ""; // put token of your account server
 
     private static String UPLOAD_FILE = "UploadByAPI.txt";
 
@@ -54,7 +54,8 @@ public class GoogleDriveApplication {
     }
 
     private static Credential getCredentials() throws IOException {
-        java.io.File credentialsFile = new java.io.File(CREDENTIALS);
+        URL credentials = GoogleDriveApplication.class.getClassLoader().getResource(CREDENTIALS);
+        java.io.File credentialsFile = new java.io.File(credentials.getFile());
         if (!credentialsFile.exists()) {
             throw new FileNotFoundException("Resource not found: " + credentialsFile);
         }
