@@ -28,7 +28,7 @@ public class GoogleDriveApplication {
 
     private static String APPLICATION_NAME = "Upload Google Drive";
 
-    private static String CREDENTIALS = "client_credentials.json"; // copy credentials file to resources folder
+    private static String CREDENTIALS = "service_account_credential.json"; // copy credentials file to resources folder
     private static String DIRECTORY_ID = ""; // put id of shared folder
     private static String TOKEN = ""; // put token of your account server
 
